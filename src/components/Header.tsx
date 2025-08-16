@@ -48,7 +48,19 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="default" className="bg-gradient-accent hover:opacity-90">
+            <Button 
+              variant="default" 
+              className="bg-gradient-accent hover:opacity-90"
+              onClick={() => {
+                const chatSection = document.getElementById('chat');
+                if (chatSection) {
+                  chatSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  // If not on homepage, navigate there
+                  window.location.href = '/#chat';
+                }
+              }}
+            >
               Get Legal Help
             </Button>
           </div>
@@ -82,7 +94,20 @@ export const Header = () => {
               </Link>
             ))}
             <div className="pt-2 px-4">
-              <Button variant="default" className="w-full bg-gradient-accent hover:opacity-90">
+              <Button 
+                variant="default" 
+                className="w-full bg-gradient-accent hover:opacity-90"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  const chatSection = document.getElementById('chat');
+                  if (chatSection) {
+                    chatSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    // If not on homepage, navigate there
+                    window.location.href = '/#chat';
+                  }
+                }}
+              >
                 Get Legal Help
               </Button>
             </div>
