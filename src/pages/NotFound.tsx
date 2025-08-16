@@ -12,13 +12,29 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center space-y-6 px-4">
+        <div className="text-6xl font-bold text-accent">404</div>
+        <div className="space-y-2">
+          <h1 className="text-2xl font-semibold text-primary">Page Not Found</h1>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            The page you're looking for doesn't exist or has been moved.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/" 
+            className="inline-flex items-center justify-center rounded-md bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Return to Home
+          </a>
+          <a 
+            href="/toolkit" 
+            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Legal Toolkit
+          </a>
+        </div>
       </div>
     </div>
   );
